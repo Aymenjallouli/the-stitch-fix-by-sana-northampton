@@ -1,0 +1,764 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<script>document.documentElement.classList.add('js')</script>
+<title>The Stitch Fix by Sana, clothing alterations in Northampton</title>
+<meta name="description" content="Clothing alterations in Upton, Northampton: dresses, trousers, suits, hems, zips and repairs. Rated 5.0 from 26 Google reviews. Mon–Fri, 10 am–6 pm.">
+<meta property="og:title" content="The Stitch Fix by Sana, clothing alterations in Northampton">
+<meta property="og:description" content="Dresses taken up, trousers hemmed, suits fitted and zips replaced by Sana in Upton, Northampton. 5.0 from 26 Google reviews.">
+<meta property="og:type" content="website">
+<meta name="theme-color" content="#24315E">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='10' fill='%2324315E'/%3E%3Ctext x='32' y='43' text-anchor='middle' font-family='Georgia,serif' font-style='italic' font-size='36' fill='%23F3EEE4'%3ES%3C/text%3E%3Cpath d='M12 52h40' stroke='%23E07A5F' stroke-width='3' stroke-dasharray='5 4'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;600&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "The Stitch Fix by Sana",
+  "description": "Clothing alteration service in Upton, Northampton: hems, zips, repairs, dresses, trousers and suits.",
+  "telephone": "+447801550019",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "3 Excalibur Cl, Upton",
+    "addressLocality": "Northampton",
+    "postalCode": "NN5 4BJ",
+    "addressCountry": "GB"
+  },
+  "geo": { "@type": "GeoCoordinates", "latitude": 52.246652399999995, "longitude": -0.9583353 },
+  "hasMap": "https://www.google.com/maps/place/?q=place_id:ChIJ1-Vx3wEPd0gRZ-POda7sGP4",
+  "openingHoursSpecification": [{
+    "@type": "OpeningHoursSpecification",
+    "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+    "opens": "10:00",
+    "closes": "18:00"
+  }],
+  "sameAs": ["https://www.facebook.com/profile.php?id=100095404668151"]
+}
+</script>
+<style>
+/* ==========================================================================
+   DESIGN DECISIONS: The Stitch Fix by Sana
+   Direction: EDITORIAL LUXE, read as "the tailor's notebook". A magazine
+   page about one craftsperson: numbered sections, thin rules, captions,
+   high-contrast serif display, plenty of margin.
+   Photos: only one usable image, a customer-grade close-up of a navy
+   jersey hem with its twin stitch line on grey carpet (photo-03; photo-04
+   is a duplicate, photo-01 is a blurred Street View frame, photo-02 reads
+   as stock). So the page is typography-led and that single photo carries it
+   twice: as the hero (the headline sits on the fabric, just above the real
+   hem) and as the texture clipped inside the giant review quote.
+   Palette: linen/calico paper (--bg) and a navy pulled straight from the
+   jersey (--brand) as the ONE strong move (hero photo, contact field).
+   Ink is a navy-black; the accent is tailor's-chalk red, used only for
+   stitches, numbers and the "today" marker. A tape-measure cream (--tape)
+   appears once, in the measuring band.
+   Type: Instrument Serif (display, roman + italic) with Hanken Grotesk
+   400/600 for body and labels. Display and body ratio is about 1:7.
+   Hero: mobile = full-bleed photo with the headline set on the navy fabric
+   above the hem and a garment-tag rating label. Desktop = split editorial,
+   type left and photo bleeding off the right edge.
+   Rhythm: hero split, then tape-measure marquee, review rail (snap, peek),
+   giant fabric-filled quote (signature), sticky-side numbered list,
+   hours + map split on surface, navy contact field with a giant number,
+   then a quiet footer. No two sections share a layout.
+   ========================================================================== */
+:root{
+  --bg:#F3EEE4; --surface:#E9E2D4; --ink:#161B2E; --ink-soft:#4A4F5F;
+  --brand:#24315E; --brand-ink:#F3EEE4; --accent:#B4472F; --accent-soft:#E07A5F;
+  --line:rgba(22,27,46,.16); --line-strong:rgba(22,27,46,.4); --tape:#E8D9A4;
+
+  --font-display:"Instrument Serif", "Iowan Old Style", Georgia, serif;
+  --font-body:"Hanken Grotesk", system-ui, -apple-system, "Segoe UI", sans-serif;
+
+  --step--1:clamp(.8125rem, .79rem + .12vw, .875rem);
+  --step-0:clamp(1.0625rem, 1.02rem + .2vw, 1.1875rem);
+  --step-1:clamp(1.25rem, 1.15rem + .5vw, 1.5rem);
+  --step-2:clamp(1.5rem, 1.3rem + 1vw, 2.125rem);
+  --step-3:clamp(1.875rem, 1.5rem + 1.9vw, 3rem);
+  --step-4:clamp(2.375rem, 1.8rem + 3vw, 4.5rem);
+  --step-5:clamp(3rem, 2rem + 5.4vw, 6.75rem);
+  --step-6:clamp(3.25rem, 12vw, 9rem);
+
+  --space-1:4px; --space-2:8px; --space-3:12px; --space-4:16px; --space-5:24px;
+  --space-6:32px; --space-7:48px; --space-8:64px; --space-9:96px; --space-10:128px;
+  --section:clamp(64px, 12vw, 160px);
+  --gutter:clamp(20px, 5vw, 48px);
+  --max:1280px;
+
+  --r-1:2px; --r-2:10px;
+
+  --ease-out:cubic-bezier(.16,1,.3,1);
+  --ease-in-out:cubic-bezier(.65,0,.35,1);
+  --dur-1:180ms; --dur-2:400ms; --dur-3:800ms;
+
+  --bar-h:0px;
+}
+
+*,*::before,*::after{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 var(--step-0)/1.6 var(--font-body);
+  font-feature-settings:"kern","liga";text-rendering:optimizeLegibility;-webkit-font-smoothing:antialiased;
+  padding-bottom:var(--bar-h);overflow-x:hidden}
+body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:100;opacity:.07;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 .1 0 0 0 0 .1 0 0 0 0 .15 0 0 0 .55 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
+img{display:block;max-width:100%;height:auto}
+a{color:inherit}
+p{text-wrap:pretty;margin:0 0 1em}
+h1,h2,h3{font-family:var(--font-display);font-weight:400;line-height:1;letter-spacing:-.02em;text-wrap:balance;margin:0}
+em{font-style:italic}
+::selection{background:var(--brand);color:var(--brand-ink)}
+:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:var(--r-1)}
+[id]{scroll-margin-top:84px}
+
+.skip{position:absolute;left:var(--space-4);top:-100px;min-height:44px;z-index:200;background:var(--ink);color:var(--bg);padding:var(--space-3) var(--space-4);text-decoration:none}
+.skip:focus{top:var(--space-4)}
+.wrap{width:100%;max-width:calc(var(--max) + var(--gutter)*2);margin-inline:auto;padding-inline:var(--gutter)}
+.grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));column-gap:var(--space-4)}
+.grid>*{grid-column:1/-1;min-width:0}
+.label{font:600 var(--step--1)/1.2 var(--font-body);letter-spacing:.14em;text-transform:uppercase;color:var(--ink-soft);display:flex;align-items:center;gap:var(--space-3)}
+.label .n{font-family:var(--font-display);font-style:italic;font-weight:400;font-size:1.35em;letter-spacing:0;text-transform:none;color:var(--accent)}
+.label::after{content:"";flex:0 0 48px;height:1px;background:currentColor;opacity:.5}
+.link{text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:.22em;text-decoration-color:var(--line-strong);transition:text-decoration-color var(--dur-1)}
+.ico{width:20px;height:20px;flex:none;fill:none;stroke:currentColor;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+
+/* Buttons */
+.btn{--b:var(--ink);--f:var(--bg);display:inline-flex;align-items:center;justify-content:center;gap:var(--space-3);min-height:52px;padding:0 var(--space-5);
+  background:var(--b);color:var(--f);border:1px solid var(--b);border-radius:var(--r-1);font:600 1rem/1 var(--font-body);letter-spacing:.01em;text-decoration:none;white-space:nowrap;
+  position:relative;overflow:hidden;isolation:isolate;transition:transform var(--dur-1) var(--ease-out),color var(--dur-2) var(--ease-out)}
+.btn::before{content:"";position:absolute;inset:0;z-index:-1;background:var(--accent);transform:scaleX(0);transform-origin:right;transition:transform var(--dur-2) var(--ease-out)}
+.btn:active{transform:scale(.97)}
+.btn--ghost{--b:transparent;--f:var(--ink);border-color:var(--line-strong)}
+.btn--light{--b:var(--bg);--f:var(--ink)}
+.btn--line-light{--b:transparent;--f:var(--bg);border-color:rgba(243,238,228,.45)}
+
+/* Header */
+.hdr{position:sticky;top:0;z-index:50;background:var(--bg);border-bottom:1px solid transparent;transition:border-color var(--dur-2)}
+.hdr.is-scrolled{border-bottom-color:var(--line)}
+.hdr__in{display:flex;align-items:center;justify-content:space-between;gap:var(--space-4);height:68px;transition:height var(--dur-2) var(--ease-out)}
+.hdr.is-scrolled .hdr__in{height:56px}
+.mark{display:flex;align-items:center;gap:var(--space-3);text-decoration:none;transform-origin:left center;transition:transform var(--dur-2) var(--ease-out);min-height:48px}
+.hdr.is-scrolled .mark{transform:scale(.9)}
+.mark svg{width:36px;height:36px;flex:none}
+.mark__t{font-family:var(--font-display);font-size:1.45rem;line-height:1;letter-spacing:-.01em;white-space:nowrap}
+.mark__t em{color:var(--ink-soft)}
+.nav{display:none}
+.menu-btn{display:inline-flex;align-items:center;gap:var(--space-3);min-height:44px;min-width:44px;padding:0 var(--space-2) 0 var(--space-3);background:none;border:0;color:var(--ink);font:600 var(--step--1)/1 var(--font-body);letter-spacing:.14em;text-transform:uppercase;cursor:pointer}
+.menu-btn__bars{width:22px;height:10px;position:relative}
+.menu-btn__bars::before,.menu-btn__bars::after{content:"";position:absolute;left:0;right:0;height:1.6px;background:currentColor;transition:transform var(--dur-2) var(--ease-out)}
+.menu-btn__bars::before{top:0}.menu-btn__bars::after{bottom:0}
+.menu-btn[aria-expanded="true"] .menu-btn__bars::before{transform:translateY(4.2px) rotate(45deg)}
+.menu-btn[aria-expanded="true"] .menu-btn__bars::after{transform:translateY(-4.2px) rotate(-45deg)}
+
+.drawer{position:fixed;inset:0;z-index:40;background:var(--bg);padding:96px var(--gutter) calc(var(--space-7) + env(safe-area-inset-bottom));display:flex;flex-direction:column;justify-content:space-between;
+  visibility:hidden;clip-path:inset(0 0 100% 0);transition:clip-path var(--dur-3) var(--ease-out),visibility 0s var(--dur-3)}
+.drawer.is-open{visibility:visible;clip-path:inset(0);transition:clip-path var(--dur-3) var(--ease-out)}
+.drawer ol{list-style:none;margin:0;padding:0;counter-reset:d}
+.drawer li{border-top:1px solid var(--line);counter-increment:d}
+.drawer li a{display:flex;align-items:baseline;justify-content:space-between;padding:var(--space-4) 0;font-family:var(--font-display);font-size:var(--step-4);line-height:1.05;text-decoration:none;
+  opacity:0;transform:translateY(24px);transition:opacity var(--dur-2) var(--ease-out),transform var(--dur-3) var(--ease-out)}
+.drawer li a::after{content:"0" counter(d);font:italic 400 var(--step-1) var(--font-display);color:var(--accent)}
+.drawer.is-open li a{opacity:1;transform:none}
+.drawer.is-open li:nth-child(2) a{transition-delay:60ms}.drawer.is-open li:nth-child(3) a{transition-delay:120ms}.drawer.is-open li:nth-child(4) a{transition-delay:180ms}
+.drawer__foot{display:grid;gap:var(--space-3);font-size:var(--step-0);color:var(--ink-soft)}
+body.is-locked{overflow:hidden}
+body.is-locked .bar{transform:translateY(100%)}
+
+/* Hero */
+.hero{display:grid;grid-template-areas:"stack" "panel"}
+.hero__media{grid-area:stack;position:relative;height:clamp(460px,76svh,660px);overflow:hidden;background:var(--brand)}
+.hero__media img{width:100%;height:100%;object-fit:cover;object-position:18% 80%;transform-origin:30% 70%}
+.hero__media::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(14,18,36,.5) 0%,rgba(14,18,36,.1) 45%,transparent 62%)}
+.hero__title{grid-area:stack;z-index:2;align-self:start;color:var(--brand-ink);padding:var(--space-6) var(--gutter) 0}
+.hero__title .label{color:rgba(243,238,228,.82);margin-bottom:var(--space-5)}
+.hero__title .label .n{color:var(--accent-soft)}
+h1{font-size:clamp(3.5rem,19vw,9rem);line-height:.94;letter-spacing:-.035em}
+h1 .ln{display:block;overflow:hidden;padding-bottom:.06em;margin-bottom:-.06em}
+h1 .ln>span{display:block}
+h1 em{padding-right:.04em}
+.tag{position:absolute;z-index:2;left:var(--gutter);bottom:var(--space-5);display:flex;align-items:center;gap:var(--space-3);padding:var(--space-3) var(--space-4);
+  background:var(--bg);color:var(--ink);text-decoration:none;border-radius:var(--r-1);font-size:.9375rem;line-height:1.25;min-height:48px}
+.tag b{font-weight:600}
+.stars{color:var(--accent);letter-spacing:.08em;font-size:.95em}
+.hero__panel{grid-area:panel;padding:var(--space-6) var(--gutter) var(--space-7)}
+.hero__lede{font-size:var(--step-1);line-height:1.45;max-width:34ch;margin-bottom:var(--space-6)}
+.hero__cta{display:flex;flex-wrap:wrap;gap:var(--space-3)}
+.hero__cta .btn{flex:1 1 140px;padding-inline:var(--space-4)}
+.status{display:inline-flex;align-items:center;gap:var(--space-3);margin-top:var(--space-5);font-size:.9375rem;color:var(--ink-soft)}
+.dot{width:8px;height:8px;border-radius:50%;background:var(--ink-soft);flex:none;position:relative}
+.is-open .dot{background:#2F7D4F}
+.is-open .dot::after{content:"";position:absolute;inset:-4px;border-radius:50%;border:1px solid #2F7D4F;animation:ping 2.4s var(--ease-out) infinite}
+@keyframes ping{from{opacity:.9;transform:scale(.6)}to{opacity:0;transform:scale(1.6)}}
+
+/* Tape measure band */
+.tape{background:var(--tape);color:var(--ink);overflow:hidden;position:relative;border-block:1px solid rgba(22,27,46,.25)}
+.tape::before,.tape::after{content:"";position:absolute;left:0;right:0;height:12px;pointer-events:none;
+  background:repeating-linear-gradient(90deg,var(--ink) 0 1px,transparent 1px 9.6px),repeating-linear-gradient(90deg,var(--ink) 0 1px,transparent 1px 48px);
+  background-size:auto 7px,auto 12px;background-repeat:repeat-x;opacity:.55}
+.tape::before{top:0}
+.tape::after{bottom:0;transform:scaleY(-1)}
+.tape__track{display:flex;width:max-content;animation:marquee 46s linear infinite}
+.tape__group{display:flex;align-items:center;gap:var(--space-6);padding:var(--space-6) var(--space-6) var(--space-6) 0;font-family:var(--font-display);font-size:var(--step-2);line-height:1;white-space:nowrap}
+.tape__group i{font-style:normal;font:600 .75rem/1 var(--font-body);letter-spacing:.1em;color:var(--accent)}
+@keyframes marquee{to{transform:translateX(-50%)}}
+
+/* Sections */
+.sec{padding-block:var(--section)}
+.rev{padding-bottom:clamp(48px,8vw,104px)}
+
+/* Reviews */
+.rev__head{display:grid;gap:var(--space-6);margin-bottom:var(--space-7)}
+.rev__head h2{font-size:var(--step-4);max-width:13ch}
+.rev__head h2 em{color:var(--brand)}
+.score{display:flex;align-items:flex-end;gap:var(--space-5);flex-wrap:wrap;border-top:1px solid var(--line);padding-top:var(--space-5)}
+.score__n{font-family:var(--font-display);font-size:clamp(5rem,20vw,9.5rem);line-height:.8;letter-spacing:-.04em}
+.score__meta{display:grid;gap:var(--space-2);padding-bottom:var(--space-2)}
+.score__meta .stars{font-size:1.25rem}
+.score__meta a{font-weight:600;display:inline-flex;align-items:center;gap:var(--space-2);min-height:44px}
+.rail{display:grid;grid-auto-flow:column;grid-auto-columns:min(84%,440px);gap:var(--space-4);overflow-x:auto;scroll-snap-type:x mandatory;overscroll-behavior-x:contain;
+  padding:0 var(--gutter) var(--space-5);scroll-padding-inline:var(--gutter);scrollbar-width:none}
+.rail::-webkit-scrollbar{display:none}
+.card{margin:0;scroll-snap-align:start;background:var(--surface);padding:var(--space-6) var(--space-5) var(--space-5);display:flex;flex-direction:column;gap:var(--space-5);border-radius:var(--r-1);position:relative}
+.card::before{content:"“";position:absolute;right:var(--space-5);top:-.12em;font:400 7rem/1 var(--font-display);color:var(--accent);opacity:.9}
+.card blockquote{margin:0;font-family:var(--font-display);font-size:var(--step-1);line-height:1.3;letter-spacing:-.005em;text-wrap:pretty}
+.card figcaption{margin-top:auto;display:flex;justify-content:space-between;align-items:baseline;gap:var(--space-3);border-top:1px solid var(--line);padding-top:var(--space-4);font-size:.9375rem}
+.card figcaption b{font-weight:600;white-space:nowrap}
+.card figcaption>span{text-align:right}
+.card figcaption span{color:var(--ink-soft)}
+.card--dark{background:var(--brand);color:var(--brand-ink)}
+.card--dark figcaption{border-top-color:rgba(243,238,228,.25)}
+.card--dark figcaption span{color:rgba(243,238,228,.75)}
+.card--dark::before{color:var(--accent-soft)}
+.card--dark .stars{color:var(--accent-soft)}
+.rail__ctl{display:none}
+
+/* Signature quote */
+.sig{padding-block:var(--section);border-top:1px solid var(--line);position:relative}
+.sig__q{margin:0}
+.sig__q p{font-family:var(--font-display);font-size:clamp(3.1rem,11.5vw,10rem);line-height:.92;letter-spacing:-.04em;margin:0;color:var(--brand);text-wrap:balance}
+@supports ((-webkit-background-clip:text) or (background-clip:text)){
+  .sig__q p{background:url("assets/photos/photo-03.jpg") 0 12%/150% auto no-repeat var(--brand);-webkit-background-clip:text;background-clip:text;color:transparent;-webkit-text-fill-color:transparent}
+}
+.sig__q p em{padding-right:.05em}
+.sig__stitch{display:block;width:100%;height:20px;margin-block:var(--space-6) var(--space-5);color:var(--accent)}
+.sig__cite{display:flex;flex-wrap:wrap;gap:var(--space-2) var(--space-4);align-items:baseline;font-size:var(--step-0)}
+.sig__cite b{font-weight:600}
+.sig__cite span{color:var(--ink-soft);max-width:44ch}
+
+/* Services */
+.svc{background:var(--bg)}
+.svc__side h2{font-size:var(--step-4);margin-block:var(--space-5) var(--space-5)}
+.svc__side h2 em{color:var(--accent)}
+.svc__side p{color:var(--ink-soft);max-width:38ch}
+.svc__list{list-style:none;margin:var(--space-7) 0 0;padding:0;border-bottom:1px solid var(--line)}
+.svc__list li{display:grid;grid-template-columns:2.6rem 1fr;column-gap:var(--space-4);padding-block:var(--space-6);border-top:1px solid var(--line);position:relative}
+.svc__list li::after{content:"";position:absolute;left:0;top:-1px;height:1px;width:100%;background:var(--ink);transform:scaleX(0);transform-origin:left;transition:transform var(--dur-3) var(--ease-out)}
+.svc__n{font:italic 400 var(--step-2)/1 var(--font-display);color:var(--accent);padding-top:.15em}
+.svc__list h3{font-size:var(--step-3);line-height:1.02;margin-bottom:var(--space-3)}
+.svc__list p{margin:0;color:var(--ink-soft);max-width:52ch}
+.svc__list p q{color:var(--ink);font-style:italic;quotes:"“" "”"}
+
+/* Visit */
+.visit{background:var(--surface)}
+.visit h2{font-size:var(--step-4);margin-block:var(--space-5) var(--space-6);max-width:12ch}
+.now{border-top:1px solid var(--line-strong);border-bottom:1px solid var(--line);padding-block:var(--space-5);margin-bottom:var(--space-6)}
+.now__state{font-family:var(--font-display);font-size:var(--step-3);line-height:1.05;display:flex;align-items:center;gap:var(--space-4);text-wrap:balance}
+.now__state .dot{width:12px;height:12px}
+.now__sub{color:var(--ink-soft);margin:var(--space-2) 0 0;font-size:.9375rem}
+.hours{width:100%;border-collapse:collapse;font-variant-numeric:tabular-nums}
+.hours th,.hours td{padding:var(--space-3) 0;border-bottom:1px solid var(--line);text-align:left;font-weight:400}
+.hours td{text-align:right;color:var(--ink-soft)}
+.hours tr.is-today th{font-weight:600;color:var(--ink)}
+.hours tr.is-today td{color:var(--ink);font-weight:600}
+.hours tr.is-today th::before{content:"";display:inline-block;width:8px;height:8px;background:var(--accent);border-radius:50%;margin-right:var(--space-3);vertical-align:.1em}
+.hours .today{font:600 .6875rem/1 var(--font-body);letter-spacing:.12em;text-transform:uppercase;color:var(--accent);margin-left:var(--space-2)}
+.addr{margin-top:var(--space-7);display:grid;gap:var(--space-4)}
+.addr address{font-style:normal;font-family:var(--font-display);font-size:var(--step-2);line-height:1.15}
+.map{margin-top:var(--space-7);display:grid;gap:var(--space-3)}
+.map__frame{position:relative;aspect-ratio:4/5;border-radius:var(--r-2);overflow:hidden;background:var(--bg);border:1px solid var(--line)}
+.map__frame iframe{position:absolute;inset:0;width:100%;height:100%;border:0;filter:grayscale(.35) contrast(1.02)}
+.map__frame a{position:absolute;inset:0;display:grid;place-items:center;text-align:center;padding:var(--space-5);font-family:var(--font-display);font-size:var(--step-2);z-index:0}
+.map__frame iframe{z-index:1}
+.map small{font-size:.9375rem;color:var(--ink-soft)}
+
+/* Contact */
+.contact{background:var(--brand);color:var(--brand-ink);padding-block:var(--section);position:relative;overflow:hidden}
+.contact .label{color:rgba(243,238,228,.75)}
+.contact .label .n{color:var(--accent-soft)}
+.contact h2{font-size:var(--step-4);margin-block:var(--space-5) var(--space-5);max-width:14ch}
+.contact p{max-width:46ch;color:rgba(243,238,228,.85)}
+.phone{display:block;font-family:var(--font-display);font-size:clamp(3rem,18vw,10.5rem);line-height:.95;letter-spacing:-.035em;text-decoration:none;margin-block:var(--space-7) var(--space-6);white-space:nowrap;width:max-content;max-width:100%}
+.phone span{display:inline-block;transition:transform var(--dur-2) var(--ease-out)}
+.contact__cta{display:flex;flex-wrap:wrap;gap:var(--space-3)}
+.contact__cta .btn{flex:1 1 160px}
+.contact__soc{margin-top:var(--space-7);display:flex;align-items:center;gap:var(--space-3);border-top:1px solid rgba(243,238,228,.2);padding-top:var(--space-5)}
+.contact__soc a{display:inline-flex;align-items:center;gap:var(--space-3);min-height:44px;text-decoration:none;font-weight:600}
+.contact__stitch{position:absolute;right:calc(var(--gutter) * -1);top:var(--space-7);width:46%;max-width:520px;height:auto;color:rgba(243,238,228,.16);pointer-events:none}
+
+/* Footer */
+.ftr{padding-block:var(--space-8) var(--space-7);font-size:.9375rem;color:var(--ink-soft)}
+.ftr__top{display:grid;gap:var(--space-5);padding-bottom:var(--space-6);border-bottom:1px solid var(--line)}
+.ftr__name{font-family:var(--font-display);font-size:var(--step-3);line-height:1;color:var(--ink)}
+.ftr__name em{color:var(--ink-soft)}
+.ftr__bot{display:flex;flex-wrap:wrap;justify-content:space-between;gap:var(--space-3);padding-top:var(--space-5)}
+.ftr__bot{align-items:center}
+.ftr__bot a{min-height:44px;display:inline-flex;align-items:center}
+
+/* Sticky action bar (mobile) */
+.bar{position:fixed;left:0;right:0;bottom:0;z-index:45;display:grid;grid-template-columns:repeat(3,1fr);background:var(--ink);
+  padding-bottom:env(safe-area-inset-bottom);border-top:1px solid rgba(243,238,228,.12);transform:translateY(0);transition:transform var(--dur-2) var(--ease-out)}
+.bar a{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;min-height:60px;color:var(--bg);text-decoration:none;font:600 .8125rem/1 var(--font-body);letter-spacing:.04em}
+.bar a+a{border-left:1px solid rgba(243,238,228,.14)}
+.bar a:first-child{background:var(--accent)}
+.bar a:active{background:var(--brand)}
+@media (max-width:767.98px){:root{--bar-h:calc(60px + env(safe-area-inset-bottom))}}
+@media (min-width:768px){.bar{display:none}}
+
+/* Reveal (only with JS) */
+.js [data-reveal]{opacity:0;transform:translateY(22px);transition:opacity var(--dur-3) var(--ease-out),transform var(--dur-3) var(--ease-out);transition-delay:var(--d,0ms)}
+.js [data-reveal].is-in{opacity:1;transform:none}
+.js .svc__list li.is-in::after{transform:scaleX(1)}
+.js .sig__stitch{clip-path:inset(0 100% 0 0);transition:clip-path 1.4s var(--ease-in-out) .2s}
+.js .sig.is-in .sig__stitch{clip-path:inset(0 0 0 0)}
+
+/* Load choreography */
+.js .hdr{animation:fade var(--dur-3) var(--ease-out) both}
+.js h1 .ln>span{animation:rise .9s var(--ease-out) both;animation-delay:calc(180ms + var(--i) * 80ms)}
+.js .hero__title .label{animation:fade var(--dur-3) var(--ease-out) .12s both}
+.js .hero__media{animation:unclip 1.1s var(--ease-in-out) both}
+.js .hero__media img{animation:settle 1.4s var(--ease-out) both}
+.js .tag,.js .hero__panel{animation:fadeUp var(--dur-3) var(--ease-out) .6s both}
+@keyframes fade{from{opacity:0}}
+@keyframes rise{from{transform:translateY(105%)}}
+@keyframes unclip{from{clip-path:inset(0 0 100% 0)}to{clip-path:inset(0)}}
+@keyframes settle{from{transform:scale(1.08)}}
+@keyframes fadeUp{from{opacity:0;transform:translateY(16px)}}
+@supports (animation-timeline:view()){
+  .hero__media .px{animation:drift linear both;animation-timeline:view();animation-range:exit 0% exit 100%}
+  @keyframes drift{to{transform:translateY(12%) scale(1.06)}}
+}
+.px{width:100%;height:100%}
+
+/* Desktop hover only */
+@media (hover:hover) and (pointer:fine){
+  .btn:hover::before{transform:scaleX(1);transform-origin:left}
+  .btn--ghost:hover,.btn--light:hover,.btn--line-light:hover{color:var(--bg);border-color:var(--accent)}
+  .link:hover{text-decoration-color:currentColor}
+  .tag:hover b{text-decoration:underline;text-underline-offset:.2em}
+  .card{transition:transform var(--dur-2) var(--ease-out)}
+  .card:hover{transform:translateY(-4px)}
+  .svc__list li:hover::after{transform:scaleX(1)}
+  .phone:hover span{transform:translateX(.04em)}
+  .nav a:hover::after{transform:scaleX(1);transform-origin:left}
+  .tape:hover .tape__track{animation-play-state:paused}
+}
+
+/* ≥ 640 */
+@media (min-width:640px){
+  .rev__head{grid-template-columns:1.3fr 1fr;align-items:end}
+  .score{border-top:0;padding-top:0;justify-content:flex-end}
+  .map__frame{aspect-ratio:16/11}
+  .ftr__top{grid-template-columns:1.4fr 1fr 1fr;align-items:start}
+}
+
+/* ≥ 960 */
+@media (min-width:960px){
+  .grid{grid-template-columns:repeat(12,minmax(0,1fr));column-gap:var(--space-5)}
+  .menu-btn{display:none}
+  .drawer{display:none}
+  .nav{display:flex;align-items:center;gap:var(--space-6)}
+  .nav a{text-decoration:none;font-weight:600;font-size:.9375rem;position:relative;padding-block:var(--space-2)}
+  .nav a:not(.btn)::after{content:"";position:absolute;left:0;right:0;bottom:2px;height:1px;background:currentColor;transform:scaleX(0);transform-origin:right;transition:transform var(--dur-2) var(--ease-out)}
+  .nav .btn{min-height:44px;padding-inline:var(--space-5)}
+
+  .hero{grid-template-columns:minmax(0,1.12fr) minmax(0,1fr);grid-template-rows:1fr auto;grid-template-areas:"title media" "panel media";min-height:calc(100svh - 68px);max-height:980px}
+  .hero__media{grid-area:media;height:auto;min-height:620px}
+  .hero__media::after{background:linear-gradient(90deg,rgba(14,18,36,.18),transparent 30%)}
+  .hero__media img{object-position:30% 82%}
+  .hero__title{grid-area:title;align-self:end;color:var(--ink);padding:var(--space-7) var(--space-7) 0 max(var(--gutter),calc((100vw - var(--max)) / 2 + var(--gutter)))}
+  .hero__title .label{color:var(--ink-soft)}
+  .hero__title .label .n{color:var(--accent)}
+  h1{font-size:clamp(4rem,7.4vw,7.75rem)}
+  h1 em{color:var(--brand)}
+  .hero__panel{grid-area:panel;padding:var(--space-6) var(--space-7) var(--space-8) max(var(--gutter),calc((100vw - var(--max)) / 2 + var(--gutter)))}
+  .hero__cta .btn{flex:0 0 auto}
+  .tag{left:var(--space-6);top:var(--space-6);bottom:auto}
+
+  .rail{grid-auto-columns:calc((min(100vw,var(--max) + var(--gutter)*2) - var(--gutter)*2 - var(--space-4)*2) / 2.6);padding-inline:max(var(--gutter),calc((100vw - var(--max)) / 2 + var(--gutter)));scroll-padding-inline:max(var(--gutter),calc((100vw - var(--max)) / 2 + var(--gutter)))}
+  .card{padding:var(--space-7) var(--space-6) var(--space-6)}
+  .rail__ctl{display:flex;gap:var(--space-3);justify-content:flex-end;margin-top:var(--space-4)}
+  .rail__ctl button{width:52px;height:52px;display:grid;place-items:center;border:1px solid var(--line-strong);background:none;border-radius:50%;color:var(--ink);cursor:pointer;transition:background var(--dur-1),color var(--dur-1)}
+  .rail__ctl button:hover{background:var(--ink);color:var(--bg)}
+  .rail__ctl button:disabled{opacity:.35;pointer-events:none}
+
+  .sig__q p{max-width:13ch}
+  .sig__cite{padding-left:calc(100% / 12 * 5)}
+
+  .svc__side{grid-column:1 / span 4;align-self:start;position:sticky;top:120px}
+  .svc__list{grid-column:6 / -1;margin-top:0}
+  .svc__list li{grid-template-columns:5rem 1fr;padding-block:var(--space-7)}
+  .svc__n{font-size:var(--step-3)}
+
+  .visit__info{grid-column:1 / span 5}
+  .map{grid-column:7 / -1;margin-top:0;align-self:stretch;grid-template-rows:1fr auto}
+  .map__frame{aspect-ratio:auto;min-height:560px}
+
+  .contact__body{grid-column:1 / span 9;position:relative;z-index:1}
+  .contact__cta .btn{flex:0 0 auto;min-width:200px}
+}
+@media (min-width:1280px){
+  .tape__group{gap:var(--space-7);padding-right:var(--space-7)}
+}
+
+/* Reduced motion: nothing moves */
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *,*::before,*::after{animation:none !important;transition:none !important}
+  .js [data-reveal]{opacity:1;transform:none}
+  .js .sig__stitch{clip-path:none}
+  .tape__track{transform:none}
+}
+</style>
+<!--sf:preview--><meta name="robots" content="noindex, nofollow"><!--/sf:preview-->
+<!--sf:og--><meta property="og:image" content="https://the-stitch-fix-by-sana-northampton.aymenjallouli.dev/og.jpg"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta property="og:url" content="https://the-stitch-fix-by-sana-northampton.aymenjallouli.dev/"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:image" content="https://the-stitch-fix-by-sana-northampton.aymenjallouli.dev/og.jpg"><!--/sf:og-->
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="hdr" id="top">
+  <div class="wrap hdr__in">
+    <a class="mark" href="#main" aria-label="The Stitch Fix by Sana, back to top">
+      <svg viewBox="0 0 40 40" aria-hidden="true"><rect width="40" height="40" rx="3" fill="#24315E"/><text x="20" y="27" text-anchor="middle" font-family="Instrument Serif, Georgia, serif" font-style="italic" font-size="25" fill="#F3EEE4">S</text><path d="M7 33.5h26" stroke="#E07A5F" stroke-width="1.6" stroke-dasharray="3 2.4"/></svg>
+      <span class="mark__t">The Stitch Fix <em>by Sana</em></span>
+    </a>
+    <nav class="nav" aria-label="Main">
+      <a href="#reviews">Reviews</a>
+      <a href="#alterations">Alterations</a>
+      <a href="#visit">Hours &amp; map</a>
+      <a class="btn" href="tel:+447801550019"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg>07801 550019</a>
+    </nav>
+    <button class="menu-btn" type="button" aria-expanded="false" aria-controls="drawer"><span>Menu</span><span class="menu-btn__bars" aria-hidden="true"></span></button>
+  </div>
+</header>
+
+<div class="drawer" id="drawer" aria-label="Menu">
+  <ol>
+    <li><a href="#reviews">Reviews</a></li>
+    <li><a href="#alterations">Alterations</a></li>
+    <li><a href="#visit">Hours &amp; map</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ol>
+  <div class="drawer__foot">
+    <a class="btn" href="tel:+447801550019"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg>Call 07801 550019</a>
+    <span>3 Excalibur Close, Upton, Northampton NN5 4BJ</span>
+  </div>
+</div>
+
+<main id="main">
+
+  <section class="hero" aria-labelledby="hero-title">
+    <div class="hero__media">
+      <div class="px">
+        <img src="assets/photos/photo-03.jpg" width="1200" height="1600" fetchpriority="high" alt="Close-up of a finished hem on navy jersey, its twin row of stitching running straight to the corner">
+      </div>
+      <a class="tag" href="https://www.google.com/maps/place/?q=place_id:ChIJ1-Vx3wEPd0gRZ-POda7sGP4" target="_blank" rel="noopener">
+        <span class="stars" aria-hidden="true">★★★★★</span>
+        <span><b>5.0</b> · 26 Google reviews</span>
+      </a>
+    </div>
+    <div class="hero__title">
+      <p class="label"><span class="n">Upton</span> Clothing alterations</p>
+      <h1 id="hero-title">
+        <span class="ln"><span style="--i:0">The hem that</span></span>
+        <span class="ln"><span style="--i:1">looks like it</span></span>
+        <span class="ln"><span style="--i:2">was <em>always</em></span></span>
+        <span class="ln"><span style="--i:3"><em>there.</em></span></span>
+      </h1>
+    </div>
+    <div class="hero__panel">
+      <p class="hero__lede">Sana takes up bridesmaid dresses, hems trousers, fits suits and replaces zips, from her address on Excalibur Close in Upton.</p>
+      <div class="hero__cta">
+        <a class="btn" href="tel:+447801550019"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg>Call Sana</a>
+        <a class="btn btn--ghost" href="sms:+447801550019?&amp;body=Hello%20Sana%2C%20I%20have%20a%20garment%20that%20needs%20altering.%20Could%20you%20let%20me%20know%20when%20I%20could%20bring%20it%20round%3F%20Thank%20you."><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5h16v11H9l-5 4z"/><path d="M8 10h8M8 13h5"/></svg>Send a text</a>
+      </div>
+      <p class="status" data-status><span class="dot" aria-hidden="true"></span><span data-status-text>Monday to Friday, 10 am–6 pm</span></p>
+    </div>
+  </section>
+
+  <div class="tape" aria-hidden="true">
+    <div class="tape__track">
+      <div class="tape__group"><span>Bridesmaid dresses</span><i>01</i><span><em>Hems</em></span><i>02</i><span>Trousers</span><i>03</i><span><em>Zips</em></span><i>04</i><span>Suits</span><i>05</i><span><em>Repairs</em></span><i>06</i><span>Formal gowns</span><i>07</i><span><em>Double layers</em></span><i>08</i></div>
+      <div class="tape__group"><span>Bridesmaid dresses</span><i>01</i><span><em>Hems</em></span><i>02</i><span>Trousers</span><i>03</i><span><em>Zips</em></span><i>04</i><span>Suits</span><i>05</i><span><em>Repairs</em></span><i>06</i><span>Formal gowns</span><i>07</i><span><em>Double layers</em></span><i>08</i></div>
+    </div>
+  </div>
+
+  <section class="sec rev" id="reviews" aria-labelledby="rev-title">
+    <div class="wrap rev__head">
+      <div data-reveal>
+        <p class="label"><span class="n">01</span> Reviews</p>
+        <h2 id="rev-title" style="margin-top:var(--space-5)">Bridesmaids, short queens and <em>one rescued suit.</em></h2>
+      </div>
+      <div class="score" data-reveal style="--d:120ms">
+        <span class="score__n">5.0</span>
+        <div class="score__meta">
+          <span class="stars" aria-label="5 out of 5 stars">★★★★★</span>
+          <a class="link" href="https://www.google.com/maps/place/?q=place_id:ChIJ1-Vx3wEPd0gRZ-POda7sGP4" target="_blank" rel="noopener">Read all 26 reviews on Google <svg class="ico" viewBox="0 0 24 24" aria-hidden="true" style="width:16px;height:16px"><path d="M7 17 17 7M9 7h8v8"/></svg></a>
+        </div>
+      </div>
+    </div>
+
+    <div class="rail" data-rail tabindex="0" aria-label="Customer reviews, swipe for more">
+      <figure class="card card--dark" data-reveal>
+        <blockquote>“…She altered my bridesmaid dress, taking it up to the perfect length, and the result was absolutely flawless. The fit was spot-on, and the hem was so neatly done that it looked like it had always been made that way…”</blockquote>
+        <figcaption><b>Ellie H.</b><span><span class="stars" aria-label="5 stars">★★★★★</span> April 2026</span></figcaption>
+      </figure>
+      <figure class="card" data-reveal style="--d:80ms">
+        <blockquote>“Sana shortened and hemmed some dresses and trousers for me, including some with double layers. She was lovely to chat to, the quality of the work is amazing and really great value. Couldn’t be happier, highly recommend!”</blockquote>
+        <figcaption><b>Christine R.</b><span><span class="stars" aria-label="5 stars">★★★★★</span> April 2026</span></figcaption>
+      </figure>
+      <figure class="card" data-reveal style="--d:160ms">
+        <blockquote>“Sana did an amazing tailoring for my partners suit. She really came to the rescue to make sure he had a suit that properly fitted him. Can’t thank Sana enough for her time and efforts…”</blockquote>
+        <figcaption><b>Charlotte H.</b><span><span class="stars" aria-label="5 stars">★★★★★</span> March 2026</span></figcaption>
+      </figure>
+      <figure class="card" data-reveal style="--d:240ms">
+        <blockquote>“Sana was so kind and welcoming she also changed my dress from a tripping hazard to walking on air! I felt free to walk with no fear and as a short queen it took a weight off my shoulders…”</blockquote>
+        <figcaption><b>Abby C.</b><span><span class="stars" aria-label="5 stars">★★★★★</span> April 2026</span></figcaption>
+      </figure>
+      <figure class="card" data-reveal style="--d:320ms">
+        <blockquote>“Excellent alteration service offered by Sana. I got a bunch of clothes altered and they all fit perfectly. Quality of work is brilliant… really neat professional work.”</blockquote>
+        <figcaption><b>Aakriti B.</b><span><span class="stars" aria-label="5 stars">★★★★★</span> November 2025</span></figcaption>
+      </figure>
+    </div>
+    <div class="wrap rail__ctl">
+      <button type="button" data-dir="-1" aria-label="Previous review"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg></button>
+      <button type="button" data-dir="1" aria-label="Next review"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 5l7 7-7 7"/></svg></button>
+    </div>
+  </section>
+
+  <section class="sig" aria-label="From a review by Abby C.">
+    <div class="wrap">
+      <figure class="sig__q" data-reveal>
+        <p>“…from a tripping hazard to <em>walking on air…</em>”</p>
+        <svg class="sig__stitch" viewBox="0 0 1200 20" preserveAspectRatio="none" aria-hidden="true"><path d="M0 10H1150" stroke="currentColor" stroke-width="2" stroke-dasharray="14 9" fill="none" vector-effect="non-scaling-stroke"/><path d="M1150 10h44" stroke="currentColor" stroke-width="1.5" vector-effect="non-scaling-stroke"/><circle cx="1194" cy="10" r="4" fill="none" stroke="currentColor" stroke-width="1.5" vector-effect="non-scaling-stroke"/></svg>
+        <figcaption class="sig__cite"><b>Abby C. <span class="stars" aria-label="5 stars">★★★★★</span></b><span>on the dress Sana altered for her.</span></figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <section class="sec svc" id="alterations" aria-labelledby="svc-title">
+    <div class="wrap grid">
+      <div class="svc__side" data-reveal>
+        <p class="label"><span class="n">02</span> Alterations</p>
+        <h2 id="svc-title">Taken up, taken in, <em>zipped and mended.</em></h2>
+        <p>Formal gowns to everyday wear. There is no price list online: call or text Sana, say what needs doing, and she will tell you.</p>
+      </div>
+      <ol class="svc__list">
+        <li data-reveal><span class="svc__n">01</span><div><h3>Dresses &amp; occasion wear</h3><p>Bridesmaid dresses and formal gowns taken up to the length you need, with a hem that <q>looked like it had always been made that way</q>.</p></div></li>
+        <li data-reveal><span class="svc__n">02</span><div><h3>Trousers</h3><p>Shortened and hemmed, including garments with double layers.</p></div></li>
+        <li data-reveal><span class="svc__n">03</span><div><h3>Suits</h3><p>Tailoring so a suit properly fits the person wearing it.</p></div></li>
+        <li data-reveal><span class="svc__n">04</span><div><h3>Zips</h3><p>Zip replacements, mentioned in several of Sana’s reviews.</p></div></li>
+        <li data-reveal><span class="svc__n">05</span><div><h3>Repairs &amp; household items</h3><p>Repairs to casual wear, plus household items as well as clothes.</p></div></li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="sec visit" id="visit" aria-labelledby="visit-title">
+    <div class="wrap grid">
+      <div class="visit__info">
+        <div data-reveal>
+          <p class="label"><span class="n">03</span> Hours &amp; map</p>
+          <h2 id="visit-title">Weekdays in Upton, <em>ten till six.</em></h2>
+        </div>
+        <div class="now" data-reveal data-status>
+          <p class="now__state" style="margin:0"><span class="dot" aria-hidden="true"></span><span data-status-text>Open Monday to Friday</span></p>
+          <p class="now__sub" data-status-sub>UK time, from the hours on Google.</p>
+        </div>
+        <table class="hours" data-reveal>
+          <caption class="sr">Opening hours</caption>
+          <tbody>
+            <tr data-day="monday"><th scope="row">Monday</th><td>10 am – 6 pm</td></tr>
+            <tr data-day="tuesday"><th scope="row">Tuesday</th><td>10 am – 6 pm</td></tr>
+            <tr data-day="wednesday"><th scope="row">Wednesday</th><td>10 am – 6 pm</td></tr>
+            <tr data-day="thursday"><th scope="row">Thursday</th><td>10 am – 6 pm</td></tr>
+            <tr data-day="friday"><th scope="row">Friday</th><td>10 am – 6 pm</td></tr>
+            <tr data-day="saturday"><th scope="row">Saturday</th><td>Closed</td></tr>
+            <tr data-day="sunday"><th scope="row">Sunday</th><td>Closed</td></tr>
+          </tbody>
+        </table>
+        <div class="addr" data-reveal>
+          <address>3 Excalibur Close<br>Upton, Northampton<br>NN5 4BJ</address>
+          <div><a class="btn btn--ghost" href="https://www.google.com/maps/dir/?api=1&amp;destination=The%20Stitch%20Fix%20by%20Sana%2C%203%20Excalibur%20Cl%2C%20Upton%2C%20Northampton%2C%20NN5%204BJ" target="_blank" rel="noopener"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7-6.2-7-11.5a7 7 0 0 1 14 0C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg>Get directions</a></div>
+        </div>
+      </div>
+      <div class="map" data-reveal>
+        <div class="map__frame">
+          <a href="https://www.google.com/maps/place/?q=place_id:ChIJ1-Vx3wEPd0gRZ-POda7sGP4" target="_blank" rel="noopener">Open the map on Google</a>
+          <iframe src="https://www.google.com/maps?q=The%20Stitch%20Fix%20by%20Sana%2C%203%20Excalibur%20Cl%2C%20Upton%2C%20Northampton%2C%20NN5%204BJ&amp;output=embed" title="Map: The Stitch Fix by Sana, 3 Excalibur Close, Upton, Northampton" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
+        </div>
+        <small>Map not loading? <a class="link" href="https://www.google.com/maps/place/?q=place_id:ChIJ1-Vx3wEPd0gRZ-POda7sGP4" target="_blank" rel="noopener">Open it in Google Maps</a>.</small>
+      </div>
+    </div>
+  </section>
+
+  <section class="contact" id="contact" aria-labelledby="contact-title">
+    <svg class="contact__stitch" viewBox="0 0 400 400" aria-hidden="true"><circle cx="200" cy="200" r="190" fill="none" stroke="currentColor" stroke-width="2" stroke-dasharray="16 10"/><circle cx="200" cy="200" r="140" fill="none" stroke="currentColor" stroke-width="1"/><circle cx="165" cy="175" r="14" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="235" cy="175" r="14" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="165" cy="225" r="14" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="235" cy="225" r="14" fill="none" stroke="currentColor" stroke-width="2"/></svg>
+    <div class="wrap grid">
+      <div class="contact__body" data-reveal>
+        <p class="label"><span class="n">04</span> Contact</p>
+        <h2 id="contact-title">Tell Sana what needs <em>taking up.</em></h2>
+        <p>Call during opening hours, or send a text describing the garment and the alteration you have in mind.</p>
+        <a class="phone" href="tel:+447801550019" aria-label="Call 07801 550019"><span>07801 550019</span></a>
+        <div class="contact__cta">
+          <a class="btn btn--light" href="tel:+447801550019"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg>Call now</a>
+          <a class="btn btn--line-light" href="sms:+447801550019?&amp;body=Hello%20Sana%2C%20I%20have%20a%20garment%20that%20needs%20altering.%20Could%20you%20let%20me%20know%20when%20I%20could%20bring%20it%20round%3F%20Thank%20you."><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5h16v11H9l-5 4z"/><path d="M8 10h8M8 13h5"/></svg>Send a text</a>
+        </div>
+        <div class="contact__soc">
+          <a href="https://www.facebook.com/profile.php?id=100095404668151" target="_blank" rel="noopener" aria-label="The Stitch Fix by Sana on Facebook"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M14.5 21v-7.5h2.6l.4-3h-3V8.6c0-.9.3-1.5 1.6-1.5h1.5V4.4a20 20 0 0 0-2.3-.1c-2.3 0-3.8 1.4-3.8 3.9v2.3H9v3h2.5V21"/></svg>Follow on Facebook</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="ftr">
+  <div class="wrap">
+    <div class="ftr__top">
+      <p class="ftr__name" style="margin:0">The Stitch Fix <em>by Sana</em></p>
+      <p style="margin:0">Clothing alterations<br>3 Excalibur Close, Upton<br>Northampton NN5 4BJ</p>
+      <p style="margin:0"><a class="link" href="tel:+447801550019">07801 550019</a><br>Monday to Friday, 10 am–6 pm</p>
+    </div>
+    <div class="ftr__bot">
+      <span>© <span data-year>2026</span> The Stitch Fix by Sana</span>
+      <a class="link" href="#top">Back to top</a>
+    </div>
+  </div>
+</footer>
+
+<nav class="bar" aria-label="Quick actions">
+  <a href="tel:+447801550019"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg>Call</a>
+  <a href="sms:+447801550019?&amp;body=Hello%20Sana%2C%20I%20have%20a%20garment%20that%20needs%20altering.%20Could%20you%20let%20me%20know%20when%20I%20could%20bring%20it%20round%3F%20Thank%20you."><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5h16v11H9l-5 4z"/><path d="M8 10h8M8 13h5"/></svg>Text</a>
+  <a href="https://www.google.com/maps/dir/?api=1&amp;destination=The%20Stitch%20Fix%20by%20Sana%2C%203%20Excalibur%20Cl%2C%20Upton%2C%20Northampton%2C%20NN5%204BJ" target="_blank" rel="noopener"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7-6.2-7-11.5a7 7 0 0 1 14 0C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg>Directions</a>
+</nav>
+
+<script>
+(() => {
+  const $ = (s, c = document) => c.querySelector(s), $$ = (s, c = document) => [...c.querySelectorAll(s)];
+
+  // Year
+  $$('[data-year]').forEach(el => el.textContent = new Date().getFullYear());
+
+  // Header shrink
+  const hdr = $('.hdr');
+  const onScroll = () => hdr.classList.toggle('is-scrolled', scrollY > 24);
+  addEventListener('scroll', onScroll, { passive: true }); onScroll();
+
+  // Menu
+  const btn = $('.menu-btn'), drawer = $('#drawer');
+  const setMenu = open => {
+    btn.setAttribute('aria-expanded', open);
+    drawer.classList.toggle('is-open', open);
+    document.body.classList.toggle('is-locked', open);
+    if (open) $('a', drawer).focus(); else if (drawer.contains(document.activeElement)) btn.focus();
+  };
+  btn.addEventListener('click', () => setMenu(btn.getAttribute('aria-expanded') !== 'true'));
+  $$('a', drawer).forEach(a => a.addEventListener('click', () => setMenu(false)));
+  addEventListener('keydown', e => { if (e.key === 'Escape' && drawer.classList.contains('is-open')) setMenu(false); });
+  matchMedia('(min-width:960px)').addEventListener('change', e => e.matches && setMenu(false));
+
+  // Hours: parse Google-style strings ("10 am–6 pm", "Closed", "Open 24 hours", "9:00–12:00, 14:00–19:00", overnight)
+  const HOURS = { sunday: 'Closed', monday: '10 am–6 pm', tuesday: '10 am–6 pm', wednesday: '10 am–6 pm', thursday: '10 am–6 pm', friday: '10 am–6 pm', saturday: 'Closed' };
+  const DAYS = ['sunday', 'monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday'];
+  const toMin = (t, fallbackMer) => {
+    t = t.trim().toLowerCase();
+    if (/noon/.test(t)) return 720;
+    if (/midnight/.test(t)) return 0;
+    const m = t.match(/(\d{1,2})(?:[:.h](\d{2}))?\s*(am|pm|a\.m\.|p\.m\.)?/);
+    if (!m) return null;
+    let h = +m[1] % 24; const min = +(m[2] || 0); const mer = (m[3] || fallbackMer || '').replace(/\./g, '');
+    if (mer === 'pm' && h < 12) h += 12;
+    if (mer === 'am' && h === 12) h = 0;
+    return h * 60 + min;
+  };
+  const ranges = s => {
+    s = (s || '').trim();
+    if (!s || /closed|fermé/i.test(s)) return [];
+    if (/24\s*h|24 hours|open 24/i.test(s)) return [[0, 1440]];
+    return s.split(/,|;/).map(r => {
+      const [a, b] = r.split(/\s*[–—-]\s*|\s+to\s+/);
+      if (b == null) return null;
+      const merB = (b.match(/am|pm/i) || [])[0];
+      const merA = (a.match(/am|pm/i) || [])[0];
+      let o = toMin(a, merA ? null : merB), c = toMin(b);
+      if (o == null || c == null) return null;
+      if (c <= o) c += 1440;
+      return [o, c];
+    }).filter(Boolean);
+  };
+  const fmt = m => {
+    m = ((m % 1440) + 1440) % 1440;
+    let h = Math.floor(m / 60), mm = m % 60, mer = h >= 12 ? 'pm' : 'am';
+    h = h % 12 || 12;
+    return h + (mm ? ':' + String(mm).padStart(2, '0') : '') + ' ' + mer;
+  };
+  const cap = s => s[0].toUpperCase() + s.slice(1);
+  const londonNow = () => {
+    try {
+      const p = Object.fromEntries(new Intl.DateTimeFormat('en-GB', { timeZone: 'Europe/London', weekday: 'long', hour: '2-digit', minute: '2-digit', hourCycle: 'h23' }).formatToParts(new Date()).map(x => [x.type, x.value]));
+      return { day: DAYS.indexOf(p.weekday.toLowerCase()), min: (+p.hour % 24) * 60 + +p.minute };
+    } catch (e) { const d = new Date(); return { day: d.getDay(), min: d.getHours() * 60 + d.getMinutes() }; }
+  };
+  const status = () => {
+    const { day, min } = londonNow();
+    const today = DAYS[day], yest = DAYS[(day + 6) % 7];
+    for (const [o, c] of ranges(HOURS[yest])) if (c > 1440 && min < c - 1440) return { open: true, until: c, today };
+    for (const [o, c] of ranges(HOURS[today])) if (min >= o && min < c) return { open: true, until: c, today, all: c - o >= 1440 };
+    for (let i = 0; i < 8; i++) {
+      const d = DAYS[(day + i) % 7];
+      const next = ranges(HOURS[d]).map(r => r[0]).filter(o => i > 0 || o > min).sort((a, b) => a - b)[0];
+      if (next != null) return { open: false, today, at: next, when: i === 0 ? 'today' : i === 1 ? 'tomorrow' : cap(d) };
+    }
+    return { open: false, today };
+  };
+  const paint = () => {
+    const s = status();
+    const tr = $(`.hours tr[data-day="${s.today}"]`);
+    $$('.hours tr').forEach(r => { r.classList.remove('is-today'); r.removeAttribute('aria-current'); $('.today', r)?.remove(); });
+    if (tr) { tr.classList.add('is-today'); tr.setAttribute('aria-current', 'date'); $('th', tr).insertAdjacentHTML('beforeend', '<span class="today">Today</span>'); }
+    const main = s.open ? (s.all ? 'Open now, 24 hours' : `Open now · until ${fmt(s.until)}`)
+      : s.at != null ? `Closed · opens ${s.when === 'today' ? 'at' : s.when + ' at'} ${fmt(s.at)}` : 'Closed';
+    $$('[data-status]').forEach(el => {
+      el.classList.toggle('is-open', s.open);
+      $('[data-status-text]', el).textContent = main;
+      const sub = $('[data-status-sub]', el);
+      if (sub) sub.textContent = s.open ? 'Monday to Friday, UK time.' : 'Monday to Friday, 10 am–6 pm, UK time.';
+    });
+  };
+  paint(); setInterval(paint, 60000);
+
+  // Reviews rail buttons
+  const rail = $('[data-rail]');
+  const ctl = $$('.rail__ctl button');
+  const upd = () => { ctl[0].disabled = rail.scrollLeft < 8; ctl[1].disabled = rail.scrollLeft + rail.clientWidth > rail.scrollWidth - 8; };
+  ctl.forEach(b => b.addEventListener('click', () => {
+    const card = $('.card', rail);
+    rail.scrollBy({ left: (+b.dataset.dir) * (card.offsetWidth + 16), behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth' });
+  }));
+  rail.addEventListener('scroll', upd, { passive: true }); upd();
+
+  // Reveal on scroll
+  const els = $$('[data-reveal], .sig');
+  if (!('IntersectionObserver' in window)) { els.forEach(e => e.classList.add('is-in')); return; }
+  const io = new IntersectionObserver(es => es.forEach(e => {
+    if (e.isIntersecting) { e.target.classList.add('is-in'); io.unobserve(e.target); }
+  }), { rootMargin: '0px 0px -8% 0px', threshold: .08 });
+  els.forEach(e => io.observe(e));
+})();
+</script>
+<!--sf:preview--><div style="padding:18px 16px;font:13px/1.5 system-ui,-apple-system,Segoe UI,Roboto,sans-serif;text-align:center;background:#0f0f10;color:#a3a3a8">Preview made by Aymen Jallouli for The Stitch Fix by Sana: this is not yet the business's official website.</div><!--/sf:preview-->
+<!--sf:track--><script>(function(){try{var q=new URLSearchParams(location.search),r=q.get('r')||sessionStorage.getItem('sf_r');if(!r)return;sessionStorage.setItem('sf_r',r);navigator.sendBeacon("https://track.aymenjallouli.dev/t"+'?r='+encodeURIComponent(r)+'&p='+encodeURIComponent(location.pathname));}catch(e){}})();</script><!--/sf:track-->
+</body>
+</html>
